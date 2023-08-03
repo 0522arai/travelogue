@@ -23,10 +23,7 @@ class PostSeeder extends Seeder
             'body' => '楽しかった',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
-            'user_id' => 1,
             'category_id' => 1, 
-            'favorite_id' => 1, 
-            'timeschedule_id' => 1,
             ]);
     }
 }
