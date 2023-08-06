@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('timeschedules', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('post_id')->constrained()->nullable();
+            $table->foreignId('user_id')->constrained()->nullable();
             $table->string('time');
             $table->string('schedule');
             $table->timestamps();
