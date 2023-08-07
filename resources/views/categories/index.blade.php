@@ -8,7 +8,7 @@
     </head>
     <body class="antialiased">
         <h1>travelogue</h1>
-        [<a href='/posts/create'>create</a>]
+        <a href='/posts/create'>create</a>
         <div class='posts'>
         
             @foreach ($posts as $post)
@@ -16,7 +16,6 @@
                 <div class='post'>
                     <a href='/posts/{{ $post->id }}'>{{ $post->title}}
                     <h2 class='title'></h2></a>
-                    <p class='date'>{{ $post->date }}</p>
                     <a href="/categories/{{ $post->category->id}}">{{ $post->category->name }}</a>
                     <p class='body'>{{ $post->body }}</p>
                 </div>
