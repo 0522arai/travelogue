@@ -27,6 +27,28 @@ class PostSeeder extends Seeder
                 'user_id' => 1,
                 'favorite_id' => 1,
             ]);
+        
+         DB::table('posts')->insert([
+                'date' => '8/1~8/3',
+                'title' => '夏旅行',
+                'body' => 'また行きたい',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                'category_id' => 1,
+                'user_id' => 1,
+                'favorite_id' => 1,
+            ]);
+            
+        DB::table('posts')->insert([
+                'date' => '9/3, 9/4',
+                'title' => '旅行',
+                'body' => '最高',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                'category_id' => 1,
+                'user_id' => 1,
+                'favorite_id' => 1,
+            ]);
         //
     }
 }

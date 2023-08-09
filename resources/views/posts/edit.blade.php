@@ -29,6 +29,7 @@
                     <select name="post[category_id]">
                     </select>
                 </div>
+                <input type='submit' value='store'>
         <div class="footer">
             <a href="/">戻る</a>
         </div>
