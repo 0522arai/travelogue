@@ -22,11 +22,23 @@
                 <textarea name="post[body]" placeholder="目的、感想等">{{ old('post.body') }}</textarea>
                 <p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>
             </div>
+            <div class="timeschedule">
+                <h2>Date</h2>
+                <input type="text" name="timeschedule[date]" placeholder="3/20" value="{{ old('timeschedule.date') }}" />
+            </div>
+            <div class="timeschedule">
+                <h2>Time</h2>
+                <input type="text" name="timeschedule[time]" placeholder="9:00" value="{{ old('timeschedule.time') }}" />
+            </div>
+            <div class="timeschedule">
+                <h2>Schedule</h2>
+                <input type="text" name="timeschedule[schedule]" placeholder="出発" value="{{ old('timeschedule.schedule') }}" />
+            </div>
             <div class="category">
                 <h2>Category</h2>
                 <select name="post[category_id]">
                     @foreach($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
             </div>

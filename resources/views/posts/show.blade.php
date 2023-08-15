@@ -16,6 +16,15 @@
                 <p>{{ $post->date }}</p>
                 <h2>本文</h2>
                 <p>{{ $post->body }}</p>
+                <h2>スケジュール</h2>
+                @foreach($post->timeschedules as $timeschedule)
+                    <p>{{ $timeschedule->date }}</p>
+                    <p>{{ $timeschedule->time }}</p>
+                    <p>{{ $timeschedule->schedule }}</p>
+                @endforeach
+                
+
+                
             </div>
         </div>
         <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>

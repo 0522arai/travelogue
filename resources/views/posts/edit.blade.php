@@ -27,6 +27,7 @@
                 <div class='content__category'>
                     <h2>Category</h2>
                     <select name="post[category_id]">
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                     </select>
                 </div>
                 <input type='submit' value='store'>

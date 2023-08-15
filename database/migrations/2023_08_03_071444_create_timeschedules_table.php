@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('post_id')->constrained()->nullable();
             $table->foreignId('user_id')->constrained()->nullable();
+            $table->string('date');
             $table->string('time');
             $table->string('schedule');
             $table->timestamps();
