@@ -11,10 +11,14 @@ use App\Models\Category;
 
 use App\Models\Timeschedule;
 
+use Illuminate\Support\Facades\Auth;
+
 class PostController extends Controller
 {
     public function index(Post $post)
     {
+        $posts = Post::where('user_id', \Auth::user()->id)->get;
+        
         return view('posts.index')->with(['posts' => $post->getPaginateByLimit()]);
     }
     
@@ -32,6 +36,7 @@ class PostController extends Controller
     public function store(Request $request, Post $post)
     {
         $input = $request['post'];
+        $input['user_id'] = Auth::id();
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }

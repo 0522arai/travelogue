@@ -12,7 +12,8 @@ class Post extends Model
     protected $fillable = [
         'title',
         'body',
-        'category_id'
+        'category_id',
+        'user_id'
     ];
     
     public function getPaginateByLimit(int $limit_count = 5)
@@ -28,5 +29,10 @@ class Post extends Model
     public function timeschedules()
     {
         return $this->hasMany(Timeschedule::class);
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

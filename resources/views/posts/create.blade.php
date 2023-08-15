@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>travelogue</title>
     </head>
+    <x-app-layout>
     <body>
         <h1>travelogue</h1>
         <form action="/posts" method="POST">
@@ -48,4 +49,5 @@
             [<a href="/">back</a>]
         </div>
     </body>
+    </x-app-layout>
 </html>

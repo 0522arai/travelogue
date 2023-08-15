@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
+    <x-app-layout>
     <body class="antialiased">
         <h1>travelogue</h1>
         [<a href='/posts/create'>create</a>]
@@ -39,4 +40,5 @@
             }
         </script>
     </body>
+    </x-app-layout>
 </html>

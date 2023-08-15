@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
+
     <body class="antialiased">
         <h1 class="title">
             {{ $post->title }}
@@ -27,7 +28,8 @@
                 
             </div>
         </div>
-        <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+        <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a><br>
+        <p>投稿作成:{{ Auth::user()->name }}</p>
         <div class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</div>
         <div class="footer">
             <a href="/">戻る</a>

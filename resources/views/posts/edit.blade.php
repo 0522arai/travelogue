@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
+    <x-app-layout>
     <body class="antialiased">
         <h1 class="title">編集画面</h1>
         <div class='content'>
@@ -36,4 +37,5 @@
         </div>
         </form>
     </body>
+    </x-app-layout>
 </html>
