@@ -18,9 +18,9 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategorySeeder::class,
             FavoriteSeeder::class,
-            PostSeeder::class,
             TimescheduleSeeder::class,
             CommentSeeder::class,
+            PostSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

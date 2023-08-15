@@ -24,4 +24,9 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    
+    public function timeschedules()
+    {
+        return $this->hasMany(Timeschedule::class);
+    }
 }

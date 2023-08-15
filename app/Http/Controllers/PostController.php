@@ -9,6 +9,8 @@ use App\Http\Requests\PostRequest;
 
 use App\Models\Category;
 
+use App\Models\Timeschedule;
+
 class PostController extends Controller
 {
     public function index(Post $post)
@@ -18,6 +20,7 @@ class PostController extends Controller
     
     public function show(Post $post)
     {
+        //dd($post->timeschedules()->get());
         return view('posts.show')->with(['post' => $post]);
     }
     
@@ -51,6 +54,7 @@ class PostController extends Controller
         $post->delete();
         return redirect('/');
     }
+    
     
     //
 }
