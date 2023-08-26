@@ -27,9 +27,7 @@
                 </div>
                 <div class='content__category'>
                     <h2>Category</h2>
-                    <select name="post[category_id]">
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                    </select>
+                    <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
                 </div>
                 <input type='submit' value='store'>
         <div class="footer">

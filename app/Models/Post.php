@@ -13,7 +13,8 @@ class Post extends Model
         'title',
         'body',
         'category_id',
-        'user_id'
+        'user_id',
+        'favorite_id',
     ];
     
     public function getPaginateByLimit(int $limit_count = 5)
@@ -34,5 +35,10 @@ class Post extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

@@ -2,11 +2,12 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
+    use WithoutModelEvents;
     /**
      * Seed the application's database.
      *
@@ -18,9 +19,9 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategorySeeder::class,
             FavoriteSeeder::class,
-            TimescheduleSeeder::class,
-            CommentSeeder::class,
             PostSeeder::class,
+            CommentSeeder::class,
+            TimescheduleSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 
