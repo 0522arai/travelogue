@@ -33,7 +33,12 @@ class CommentController extends Controller
         return view('comments.create');
     }
     
-
+    public function delete(Comment $comment, Post $post)
+    {
+        $post_id = $comment -> post_id;
+        $comment->delete();
+        return redirect('/posts/'.$post_id);
+    }
     
 
     

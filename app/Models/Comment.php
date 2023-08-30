@@ -15,8 +15,6 @@ class Comment extends Model
     use SoftDeletes;
     use HasFactory;
     
-    procted $dates = ['deleted_at'];
-    
     
     protected $fillable = [
         'comment',

@@ -45,17 +45,20 @@
         
             @foreach($post->comments as $comment)
             
-            <a href="/user/{{$post->user->id}}">{{ $comment->user->name }}より</a>
-            <p>{{ $comment->comment }}</p>
+            <div class='comment'>
             
-            <form action="/comments/{{ $comment->id }}" id="form_{{ $comment->id }}" method="post">
-                @csrf
-                @method('DELETE')
-                <button type="button" onclick"deleteComment({{ $comment->id }})">delete</button>
-            </form>
+                <a href="/user/{{$post->user->id}}">{{ $comment->user->name }}より</a>
+                <p>{{ $comment->comment }}</p>
+                
+                <form action="/comments/{{ $comment->id }}" id="form_{{ $comment->id }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="button" onclick="deleteComment({{ $comment->id }})">delete</button>
+                </form>
+            </div>
             
             @endforeach
-            </div>
+        </div>
             
         <script>
             function deleteComment(id) {
