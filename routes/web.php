@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\FavoriteController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,6 +25,9 @@ Route::controller(PostController::class)->middleware(['auth'])->group(function()
 
 });
 
+Route::post('/{id}/favorite', [FavoriteController::class, 'store'])->name('favorites.favorite');
+Route::delete('/{id}/unfavorite', [FavoriteController::class, 'delete'])->name('favorites.unfavorite');
+
 //Route::get('/comments', [CommentController::class]);
 
 Route::post('/posts/{post}/comments', [CommentController::class, 'show']);
@@ -40,5 +44,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
 });
+
 
 require __DIR__.'/auth.php';
