@@ -30,11 +30,11 @@ Route::delete('/{id}/unfavorite', [FavoriteController::class, 'delete'])->name('
 
 //Route::get('/comments', [CommentController::class]);
 
-Route::get('/posts/{post}/comments', [CommentController::class, 'show']);
+Route::post('/posts/{post}/comments', [CommentController::class, 'show']);
 Route::get('/comment', [CommentController::class, 'create'])->name('comment.create');
 Route::post('/comment', [CommentController::class, 'store'])->name('comment.store');
 Route::post('/comments/{post}', [CommentController::class, 'store']);
-Route::delete('/comments/{post}', [CommentController::class, 'delete']);
+Route::delete('/comments/{comment}', [CommentController::class, 'delete']);
 Route::get('/categories/{category}', [CategoryController::class,'index'])->middleware("auth");
 
 
