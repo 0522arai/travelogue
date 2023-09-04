@@ -20,6 +20,8 @@ class FavoriteSeeder extends Seeder
         DB::table('favorites')->insert([
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
+                'user_id' => 1,
+                'post_id' =>1,
         ]);
         //
     }

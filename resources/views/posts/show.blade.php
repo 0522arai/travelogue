@@ -31,6 +31,22 @@
         
         <div class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</div>
         
+        <div class="btn-group">
+            @if (Auth::id() != $post->user_id)
+            
+            @if (Auth::user()->is_favorite($post->id))
+                {!! Form::open(['route' =>['favorites.unfavorite', $post->id], 'method' => 'delete']) !!}
+                    {!! Form::submit('いいね!を外す', ['class' => "button btn btn-warning"]) !!}
+                {!! Form::close() !!}
+            @else
+                {!! Form::open(['route' => ['favorites.favorite', $post->id]]) !!}
+                    {!! Form::submit('いいね!を付ける', ['class' => "button btn btn-warning"]) !!}
+                {!! Form::close() !!}
+            @endif
+            
+            @endif
+        </div>
+
         <form action="/comments/{{$post->id}}" method="POST">
             @csrf
             <div class="comment">
@@ -45,17 +61,20 @@
         
             @foreach($post->comments as $comment)
             
-            <a href="/user/{{$post->user->id}}">{{ $comment->user->name }}より</a>
-            <p>{{ $comment->comment }}</p>
+            <div class='comment'>
             
-            <form action="/comments/{{ $comment->id }}" id="form_{{ $comment->id }}" method="post">
-                @csrf
-                @method('DELETE')
-                <button type="button" onclick"deleteComment({{ $comment->id }})">delete</button>
-            </form>
+                <a href="/user/{{$post->user->id}}">{{ $comment->user->name }}より</a>
+                <p>{{ $comment->comment }}</p>
+                
+                <form action="/comments/{{ $comment->id }}" id="form_{{ $comment->id }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="button" onclick="deleteComment({{ $comment->id }})">delete</button>
+                </form>
+            </div>
             
             @endforeach
-            </div>
+        </div>
             
         <script>
             function deleteComment(id) {
