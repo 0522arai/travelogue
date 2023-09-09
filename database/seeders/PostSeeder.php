@@ -25,7 +25,6 @@ class PostSeeder extends Seeder
                 'updated_at' => new DateTime(),
                 'category_id' => 1,
                 'user_id' => 1,
-                'favorite_id' => 1,
             ]);
         
          DB::table('posts')->insert([
@@ -36,7 +35,6 @@ class PostSeeder extends Seeder
                 'updated_at' => new DateTime(),
                 'category_id' => 1,
                 'user_id' => 1,
-                'favorite_id' => 1,
             ]);
             
         DB::table('posts')->insert([
@@ -47,7 +45,6 @@ class PostSeeder extends Seeder
                 'updated_at' => new DateTime(),
                 'category_id' => 1,
                 'user_id' => 1,
-                'favorite_id' => 1,
             ]);
         //
     }

@@ -31,6 +31,25 @@
         
         <div class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</div>
         
+        <div class="btn-group">
+                @if (Auth::id() != $post->user_id)
+                
+            @if (Auth::user()->is_favorite($post->id))
+                {!! Form::open(['route' => ['favorites.unfavorite', $post->id], 'method' => 'delete']) !!}
+                    {!! Form::submit('いいねを外す', ['class' => "button btn btn-warning"]) !!}
+                {!! Form::close() !!}
+                
+            @else
+            
+                {!! Form::open(['route' => ['favorites.favorite', $post->id]]) !!}
+                    {!! Form::submit('いいね', ['class' => "button btn btn-success"]) !!}
+                {!! Form::close() !!}
+            
+            @endif
+                
+                @endif
+        </div>
+        
         <form action="/comments/{{$post->id}}" method="POST">
             @csrf
             <div class="comment">
@@ -40,6 +59,8 @@
             </div>
             <input type="submit" value="store">
         </form>
+        
+
         
         <div class="comments"> 
         
